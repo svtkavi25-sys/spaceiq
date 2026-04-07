@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SPACEIQ Dashboard</title>
+
+<!-- CSS File -->
+<link rel="stylesheet" href="{% static 'occupancy/style.css' %}">
+
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+<h1>SPACEIQ - AI Occupancy Analytics Platform</h1>
+
+<!-- Detect Button -->
+<form action="/detect/" method="POST">
+    {% csrf_token %}
+    <button type="submit">Detect Occupancy</button>
+</form>
+
+<!-- Result Display -->
+{% if people %}
+    <div class="result">
+        <h2>Detected People: {{ people }}</h2>
+    </div>
+
+    <!-- AI Suggestion Section -->
+    {% if suggestion %}
+    <div class="suggestion-box">
+        <h3>System Suggestion</h3>
+        <p>{{ suggestion }}</p>
+    </div>
+    {% endif %}
+
+{% endif %}
+
+<!-- Records Table -->
+<h2>Recent Occupancy Records</h2>
+
+<table>
+    <tr>
+        <th>Room</th>
+        <th>People Count</th>
+        <th>Capacity</th>
+        <th>Timestamp</th>
+    </tr>
+
+    {% for r in records %}
+    <tr>
+        <td>{{ r.room_name }}</td>
+        <td>{{ r.people_count }}</td>
+        <td>{{ r.capacity }}</td>
+        <td>{{ r.timestamp }}</td>
+    </tr>
+
+    {% empty %}
+
+    <tr>
+        <td colspan="4">No records available</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+
+</div>
+
+</body>
+</html>

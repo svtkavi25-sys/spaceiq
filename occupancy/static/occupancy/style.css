@@ -1,0 +1,89 @@
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#4c1d95,#0f172a);
+    color:white;
+}
+
+/* Container */
+
+.container{
+    width:85%;
+    margin:auto;
+    padding-top:40px;
+    text-align:center;
+}
+
+/* Title */
+
+h1{
+    font-size:36px;
+    color:#c084fc;
+    margin-bottom:30px;
+}
+
+/* Button */
+
+button{
+    padding:14px 28px;
+    background:#9333ea;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#7e22ce;
+    transform:scale(1.05);
+}
+
+/* Result Box */
+
+.result{
+    margin-top:25px;
+    padding:20px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border-radius:12px;
+    font-size:22px;
+}
+
+/* Suggestion Box */
+
+.suggestion-box{
+    margin:20px auto;
+    width:60%;
+    padding:15px;
+    background:#8b5cf6;
+    border-radius:10px;
+    font-size:18px;
+}
+
+/* Table */
+
+table{
+    width:100%;
+    margin-top:30px;
+    border-collapse:collapse;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+th{
+    background:#7c3aed;
+    padding:14px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+tr:hover{
+    background:rgba(255,255,255,0.1);
+}
